@@ -1,38 +1,231 @@
+/* Global styles */
 .App {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+    sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar styles */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px 20px;
+  background-color: #333;
   color: white;
+  border-radius: 20px;
+  margin: 10px;
 }
 
-.App-link {
+.logo-title {
+  display: flex;
+  align-items: center;
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-title img {
+  height: 40px; /* Adjust height as needed */
+  margin-right: 10px;
+}
+
+.logo-title span {
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 10px; /* Adjust spacing between tabs */
+}
+
+.nav-item:last-child {
+  margin-left: 20px; /* Adjust spacing between tabs */
+}
+
+.connect-button {
+  position: absolute;
+  margin: 0;
+  padding: 0.8em 1em;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background-color: #7be0ff;
+  border-radius: 10px;
+  color: #323232;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: inherit;
+  z-index: 0;
+  right: 2rem;
+  top: 20px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.connect-button:hover {
+  animation: sh0 0.5s ease-in-out both;
+}
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
   }
-  to {
-    transform: rotate(360deg);
+
+  25% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
   }
+
+  50% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+.connect-button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+.connect-button::before,
+.connect-button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  background: #a2a2a2;
+  opacity: 5;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.connect-button:hover::before,
+.connect-button:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.connect-button:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.connect-button:hover::after {
+  transform: translate(50%, 0) scale(1.1);
+}
+
+/* Styles for links */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  color: rgb(82, 232, 137);
+}
+
+/* Home page styles */
+/* Container styles */
+.Container {
+  margin-top: 2rem;
+}
+
+/* Heading styles */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form group styles */
+.Form.Group {
+  margin-bottom: 1.5rem;
+}
+
+/* Form label styles */
+.Form.Label {
+  font-weight: bold;
+}
+
+/* Form control styles */
+.Form.Control {
+  width: 100%;
+}
+
+/* Button styles */
+.Button {
+  margin-right: 0.5rem;
+}
+
+/* Card styles */
+.Card {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Card body styles */
+.Card.Body {
+  padding: 1rem;
+}
+
+/* Card title styles */
+.Card.Title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Card text styles */
+.Card.Text {
+  font-size: 1rem;
+}
+
+.button-post {
+  position: flex;
+  margin: 5px;
+  padding: 0.8em 1em;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: #434343;
+  border-radius: 5px;
+  color: #f0f0f0;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.my-3 {
+  position: flex;
+  margin: 10px 250px 10px 250px;
+  padding: 1rem 1rem;
+  background-color: #6bfff8;
+  border-radius: 10px;
 }
