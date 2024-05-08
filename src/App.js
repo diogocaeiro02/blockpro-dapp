@@ -4,6 +4,7 @@ import { Spinner, Navbar, Nav, Button, Container, Form } from "react-bootstrap";
 import "./App.css";
 import { ethers } from "ethers";
 import BlockProContract from "./artifacts/contracts/BlockPro.sol/BlockPro.json";
+import { quantum } from "ldrs";
 import logo from "./logo.png";
 import Profile from "./Profile.js";
 import Home from "./Home.js";
@@ -48,6 +49,8 @@ function App() {
       alert("Failed to connect wallet");
     }
   };
+
+  quantum.register();
 
   // Function to load the contract
   const loadContract = async (signer) => {
@@ -121,7 +124,8 @@ function App() {
                 minHeight: "80vh",
               }}
             >
-              <Spinner animation="border" style={{ display: "flex" }} />
+              {" "}
+              <l-quantum size="45" speed="1.75" color="black"></l-quantum>
               <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
             </div>
           ) : (
