@@ -68,3 +68,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### To RUN this project
+
+First Start the React App
+'npm run start'
+
+Install Hardhat Framework
+'npm install --save-dev hardhat'
+
+Install ethers library
+'npm install ethers'
+
+Install Hardhat Plugin
+'npm i --save-dev @nomicfoundation-toolbox'
+
+Install Bootstrap
+'npm i react-bootstrap bootstrap'
+
+### Start the local Blockchain
+
+'npx hardhat node'
+
+### Deploy the Smart Contracts
+
+'npx hardhat compile' to compile the smart contracts
+
+'npx hardhat run scripts/deploy.js --network localhost' to deploy

@@ -13,9 +13,6 @@ function Main() {
             <img src={logo} alt="BlockPro Logo" className="landing-logo" />
             <h1>Welcome to BlockPro</h1>
             <p>Connect with professionals and build your blockchain profile.</p>
-            <Link to="/signup">
-              <Button variant="primary">Get Started</Button>
-            </Link>
           </Col>
         </Row>
         <div>
@@ -49,7 +46,7 @@ function Main() {
           {/* Testimonials */}
           <section className="testimonials">
             <div className="container">
-              <h2>What Our Users Say</h2>
+              <h2 className="ttl-3">What Our Users Say</h2>
               <div className="testimonial">
                 <p>
                   "BlockPro has revolutionized the way I showcase my skills and

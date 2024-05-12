@@ -47,12 +47,9 @@
 }
 
 .connect-button {
-  position: absolute;
-  margin: 0;
   padding: 0.8em 1em;
   outline: none;
   text-decoration: none;
-  display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -146,16 +143,34 @@
   color: rgb(82, 232, 137);
 }
 
-/* Home page styles */
+/*  -----------  Home page styles -------------*/
 /* Container styles */
 .Container {
   margin-top: 2rem;
 }
 
 /* Heading styles */
-h2 {
+.ttl-2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #f0f0f0;
+}
+
+.pt-1 {
+  border-radius: 5px;
+  border: none;
+}
+
+.cr-2 {
+  color: #f0f0f0;
+}
+
+.p-1 {
+  color: #434343;
+}
+
+p.n-exist {
+  color: #00ffb3;
 }
 
 /* Form group styles */
@@ -183,6 +198,7 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   margin-top: 1rem;
+  color: #434343;
 }
 
 /* Card body styles */
@@ -220,6 +236,11 @@ h2 {
   z-index: 0;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.button-post:hover {
+  background-color: #00ffb3;
+  color: #434343;
 }
 
 .my-3 {

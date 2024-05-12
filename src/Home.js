@@ -5,7 +5,7 @@ import BlockProContract from "./artifacts/contracts/BlockPro.sol/BlockPro.json";
 import "./App.css";
 
 // Define the contract address
-const contractAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 function Home({ contract }) {
   const [posts, setPosts] = useState([]);
@@ -16,7 +16,7 @@ function Home({ contract }) {
     async function fetchPosts() {
       try {
         // Connect to the contract
-        const provider = new ethers.JsonRpcProvider();
+        const provider = new ethers.BrowserProvider(window.ethereum);
         const contractInstance = new ethers.Contract(
           contract,
           BlockProContract.abi,
@@ -82,11 +82,12 @@ function Home({ contract }) {
   return (
     <Container className="posts-content">
       <div>
-        <h2>Create Post</h2>
+        <h2 className="ttl-2">Create Post</h2>
         <Form>
           {/* Post Content Field */}
           <Form.Group className="mb-3" controlId="formPostContent">
             <Form.Control
+              className="pt-1"
               as="textarea"
               rows={3}
               placeholder="Enter your post content"
@@ -104,13 +105,13 @@ function Home({ contract }) {
           </Button>
         </Form>
       </div>
-      <h2>Latest Posts</h2>
+      <h2 className="ttl-2">Latest Posts</h2>
       {loading ? (
         <p>Loading posts...</p>
       ) : (
         <div>
           {posts.length === 0 ? (
-            <p>No posts available</p>
+            <p className="n-exist">No posts available</p>
           ) : (
             [...posts]
               .sort((a, b) => b.timestamp - a.timestamp)

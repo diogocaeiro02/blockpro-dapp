@@ -26,7 +26,7 @@ function Profile({ contractAddress, BlockProContract }) {
   async function getProfile() {
     try {
       setLoading(true);
-      if (!window.ethereum) throw new Error("Metamask not installed");
+      await enableMetamask();
       await window.ethereum.request({ method: "eth_requestAccounts" });
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signerAddress = (await provider.getSigner()).address;
@@ -91,7 +91,7 @@ function Profile({ contractAddress, BlockProContract }) {
 
   async function enableMetamask() {
     if (!window.ethereum) throw new Error("Metamask not installed");
-    await window.ethereum.enable();
+    await window.ethereum.request({ method: "eth_requestAccounts" });
   }
 
   return (
@@ -137,11 +137,11 @@ function Profile({ contractAddress, BlockProContract }) {
       </Form>
       {profile && (
         <div>
-          <h2>My Profile</h2>
-          <p>
+          <h2 className="gt-2">My Profile</h2>
+          <p className="us-2">
             <strong>Name:</strong> {profile.name}
           </p>
-          <p>
+          <p className="us-2">
             <strong>Industry:</strong> {profile.headline}
           </p>
         </div>
